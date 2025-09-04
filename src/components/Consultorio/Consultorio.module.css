@@ -1,0 +1,84 @@
+.section {
+  padding: 6rem 5%;
+  background-color: #C4BFB8; /* Tom de bege/cinza exato da imagem */
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.leftColumn {
+  flex: 1.1; /* Dá um pouco mais de espaço para a imagem */
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.imageWrapper {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.consultorioImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+.titleMain {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: clamp(3rem, 6vw, 4rem);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+
+.titleScript {
+  font-family: var(--font-script);
+  font-size: clamp(5rem, 9vw, 7rem);
+  font-weight: 400;
+  color: var(--color-white);
+  line-height: 0.8;
+  margin-bottom: 2.5rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaçamento entre os parágrafos */
+}
+
+.textContainer p {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-white);
+  opacity: 0.95; /* Deixa o texto um pouco mais suave */
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+  .section {
+    padding: 4rem 3%;
+  }
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .rightColumn {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+    .titleScript {
+        margin-bottom: 1.5rem;
+    }
+}

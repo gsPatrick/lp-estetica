@@ -1,0 +1,151 @@
+.section {
+  padding: 6rem 5%;
+  background-color: #fdfbf8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleWrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleScript {
+  font-family: var(--font-script);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoCard {
+  border: 1.5px solid var(--color-black);
+  border-radius: 35px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.iconWrapper {
+  background-color: #EAEAEA;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--color-gray-dark);
+}
+
+.textWrapper {
+  font-family: var(--font-primary);
+  color: var(--color-gray-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cardTitle {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 0.2rem;
+}
+
+.whatsappButton {
+  background-color: var(--color-whatsapp-green);
+  color: var(--color-white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.whatsappButton:hover {
+  transform: scale(1.05);
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 450px; /* Altura padrão para o mapa */
+  border-radius: 30px;
+  overflow: hidden;
+  /* Garante que o border-radius seja aplicado ao iframe em todos os navegadores */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.mapFrame {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove qualquer borda padrão do iframe */
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+  .section {
+    padding: 4rem 3%;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .title {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapPlaceholder {
+    height: 400px; /* Altura ajustada para tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .infoCard {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .mapPlaceholder {
+    height: 350px; /* Altura ajustada para celulares */
+  }
+}

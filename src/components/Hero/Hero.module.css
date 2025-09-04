@@ -1,0 +1,142 @@
+
+.heroWrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  text-align: center;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Efeito de sobreposição para escurecer a imagem e melhorar a legibilidade */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 6vw, 4rem); /* Tamanho de fonte responsivo */
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleScript {
+  font-family: var(--font-script);
+  font-size: clamp(4rem, 10vw, 7rem); /* Tamanho de fonte responsivo */
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 7vw, 5rem); /* Tamanho de fonte responsivo */
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: -1rem; /* Ajuste para aproximar do título */
+}
+
+.buttonContainer {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.button {
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--color-white);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.buttonOutline {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.buttonOutline:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.buttonFilled {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.buttonFilled:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.05);
+}
+
+/* Banner de tratamentos */
+.treatmentsBanner {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  text-align: center;
+}
+
+.treatmentItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.treatmentMain {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.treatmentScript {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  font-weight: 400;
+}

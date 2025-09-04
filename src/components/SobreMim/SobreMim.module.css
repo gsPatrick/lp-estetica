@@ -1,0 +1,32 @@
+.section {
+  position: relative; /* Essencial para o posicionamento absoluto da imagem */
+  width: 100%;
+  height: 90vh; /* Define a altura para 90% da altura da tela */
+  background-color: #fdfbf8; /* Cor de fundo para caso a imagem demore a carregar */
+  overflow: hidden; /* Garante que nada saia dos limites da seção */
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Para telas de tablet, podemos diminuir um pouco a altura */
+@media (max-width: 992px) {
+  .section {
+    height: 80vh;
+  }
+}
+
+/* Para celulares, mantemos uma altura generosa para o efeito desejado */
+@media (max-width: 768px) {
+  .section {
+    height: 85vh;
+  }
+}

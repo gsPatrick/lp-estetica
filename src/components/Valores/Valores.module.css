@@ -1,0 +1,176 @@
+.section {
+  padding: 6rem 5%;
+  background-color: #fdfbf8; /* Um branco levemente 'quente' para combinar com o design */
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+}
+
+/* --- Coluna da Esquerda: Card CTA --- */
+.ctaCard {
+  border: 1px solid var(--color-black);
+  border-radius: 45px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--color-black);
+}
+
+.imageContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerText h3 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.footerText h2 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.whatsappButton {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.whatsappButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Coluna da Direita: Valores --- */
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleScript {
+  font-family: var(--font-script);
+  font-size: clamp(5rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.introText {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-gray-dark);
+  margin-bottom: 3rem;
+}
+
+.valuesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.valueItem {
+  /* Não precisa de regras específicas aqui para o novo layout */
+}
+
+.valueTag {
+  display: inline-block;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.valueItem p {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-gray-dark);
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+  .section {
+    padding: 4rem 3%;
+  }
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  /* ADIÇÃO: Centraliza todo o conteúdo da coluna direita em telas menores */
+  .rightColumn {
+    text-align: center;
+  }
+  /* ADIÇÃO: Garante que o título (que é flex) também seja centralizado */
+  .title {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaCard {
+    padding: 1.5rem;
+  }
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .whatsappButton {
+    width: 100%;
+    text-align: center;
+  }
+  /* As regras do título foram movidas para a media query de 992px para abranger mais telas */
+}

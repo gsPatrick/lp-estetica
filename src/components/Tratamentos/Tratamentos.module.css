@@ -1,0 +1,135 @@
+.section {
+  padding: 6rem 5%;
+  background-color: #fdfbf8;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 500;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleScript {
+  font-family: var(--font-script);
+  font-size: clamp(5rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #D9D2C7; /* Cinza/Bege Suave */
+  border: 1px solid #000000; /* Borda mais fina */
+  border-radius: 35px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardTitleScript {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-transform: none; /* Remove uppercase da parte script */
+  line-height: 1;
+}
+
+.cardDescription {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+  max-width: 350px;
+  margin: 0 auto; /* Centraliza o texto se for menor que o card */
+}
+
+.ctaBanner {
+  margin-top: 4rem; /* Aumenta o espaçamento superior */
+  background-color: #D9D2C7; /* Mesmo fundo dos cards */
+  border: 1px solid #000000; /* Mesma borda dos cards */
+  border-radius: 50px; /* Borda de pílula */
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Aumenta o espaçamento do ícone */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ctaBanner:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ctaBanner p {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--color-gray-dark);
+}
+
+.ctaIcon {
+  font-size: 1.2rem;
+  color: var(--color-gray-dark);
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 992px) {
+  .section {
+    padding: 4rem 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Coluna única em telas mobile */
+    gap: 1.5rem;
+  }
+  .title {
+    margin-bottom: 3rem;
+    flex-direction: column;
+  }
+  .ctaBanner p {
+    font-size: 0.85rem;
+  }
+  /* ADIÇÃO: Ajuste para o texto não ficar muito grande no banner em telas pequenas */
+  .ctaBanner {
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+  }
+}
