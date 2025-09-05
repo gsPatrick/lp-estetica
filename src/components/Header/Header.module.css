@@ -3,17 +3,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 5%;
+  /* Header mais fino/delicado como na segunda imagem */
+  padding: 0.6rem 5%; /* Reduzido ainda mais */
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: #F5F1EB;
+  /* Mantendo a cor clara */
+  background-color: #fffff8;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.logo img {
-  max-height: 70px;
+.logoContainer img {
+  /* Logo menor para header mais delicado */
+  max-height: 35px; /* Reduzido para ficar mais fino */
   width: auto;
 }
 
@@ -24,7 +27,7 @@
 }
 
 .navLink {
-  font-family: var(--font-primary);
+  font-family: 'Aileron', sans-serif;
   font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 1.5px;
@@ -40,9 +43,9 @@
 .contactButton {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 0.9rem 2.2rem;
+  padding: 0.8rem 2rem; /* Ligeiramente menor para harmonizar com header fino */
   border-radius: 50px;
-  font-family: var(--font-primary);
+  font-family: 'Aileron', var(--font-primary);
   font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 1.5px;
@@ -52,6 +55,7 @@
 
 .contactButton:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .socialIcons {
@@ -66,34 +70,109 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Esconde o menu hambúrguer em telas grandes */
+.socialIcons a:hover {
+  color: var(--color-black);
+  transform: scale(1.1);
+}
+
 .hamburgerButton {
   display: none;
 }
 
-/* Esconde o menu mobile por padrão */
 .mobileMenu {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F1EB;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 3%;
+  font-size: 2.2rem;
+  color: var(--color-black);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 1.5rem;
+  font-family: 'Aileron', var(--font-primary);
+  text-transform: uppercase;
+}
+
+.mobileNavLinks a {
+  transition: color 0.3s ease;
+}
+
+.mobileNavLinks a:hover {
+  color: var(--color-black);
+}
+
+.mobileContactButton {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+  font-family: 'Aileron', var(--font-primary);
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mobileSocialIcons {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+}
+
+.mobileSocialIcons a {
+  color: var(--color-gray-dark);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mobileSocialIcons a:hover {
+  color: var(--color-black);
+  transform: scale(1.1);
 }
 
 /* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
 
-/* Tablet (1024px para baixo) */
 @media (max-width: 1024px) {
   .header {
-    padding: 0.5rem 3%;
+    padding: 0.4rem 3%; /* Mantendo header fino */
   }
   .navigation {
-    gap: 1.5rem; /* Diminui o espaçamento */
+    gap: 1.5rem;
   }
   .socialIcons {
-    display: none; /* Esconde os ícones sociais para ganhar espaço */
+    display: none;
   }
 }
 
-/* Mobile (768px para baixo) */
 @media (max-width: 768px) {
-  /* Esconde a navegação e sociais do desktop */
   .navigation {
     display: none;
   }
@@ -101,7 +180,6 @@
     display: none;
   }
 
-  /* Mostra o botão hambúrguer */
   .hamburgerButton {
     display: block;
     font-size: 1.8rem;
@@ -112,65 +190,7 @@
     z-index: 1002;
   }
 
-  /* Ajusta o tamanho do logo */
-  .logo img {
-    max-height: 50px;
-  }
-
-  /* Estiliza o menu mobile */
-  .mobileMenu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #F5F1EB;
-    z-index: 1001;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-
-  .mobileMenu.open {
-    transform: translateX(0);
-  }
-
-  .closeButton {
-    position: absolute;
-    top: 1.5rem;
-    right: 3%;
-    font-size: 2.2rem;
-    color: var(--color-black);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .mobileNavLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    font-size: 1.5rem;
-    font-family: var(--font-primary);
-    text-transform: uppercase;
-  }
-
-  .mobileContactButton {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    margin-top: 1.5rem;
-  }
-  
-  .mobileSocialIcons {
-    display: flex;
-    gap: 2.5rem;
-    font-size: 1.8rem;
-    margin-top: 4rem;
+  .logoContainer img {
+    max-height: 45px; /* Ajustado para mobile */
   }
 }

@@ -1,15 +1,27 @@
+/* Importação das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aileron:wght@300;400;600;700&display=swap');
+
+
+/* Declaração da fonte Sloop Script Pro Regular */
+@font-face {
+  font-family: 'SloopScriptPro'; /* Nome exato que usaremos */
+  src: url('/fonts/SloopScriptPro-Regular.woff2') format('woff2');
+  font-weight: normal; /* Assumimos normal pois não há indicação de peso diferente */
+  font-style: normal; /* Assumimos normal pois não há indicação de itálico */
+  font-display: swap; /* Garante visibilidade enquanto carrega */
+}
+
+/* Variáveis CSS */
 :root {
-  /* Paleta de Cores (sem alteração) */
+  --font-primary: 'Aileron', sans-serif; /* Fonte primária */
+  --font-script: 'SloopScriptPro', cursive; /* Variável para a fonte script, referenciando o nome declarado no @font-face */
   --color-white: #FFFFFF;
   --color-beige-light: #F5F1EB;
   --color-beige-gray: #D9D2C7;
   --color-black: #000000;
   --color-gray-dark: #333333;
   --color-whatsapp-green: #006C3F;
-
-  /* AQUI A MUDANÇA: Tipografia agora aponta para as fontes locais */
-  --font-primary: var(--font-airelion), sans-serif;
-  --font-script: var(--font-sloop-script-pro), cursive;
 }
 
 * {

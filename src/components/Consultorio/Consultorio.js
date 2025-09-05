@@ -9,10 +9,10 @@ const Consultorio = () => {
         <div className={styles.leftColumn}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/images/lugar.png" // Coloque a imagem do consultório na pasta /public
+              src="/images/lugar2.png" // Coloque a imagem do consultório na pasta /public
               alt="Foto do Consultório Boutique"
-              width={600}
-              height={750} // Ajuste a altura conforme a proporção da sua imagem
+              width={440}
+              height={500} // ALTERADO: Dimensões aumentadas mantendo proporção retangular vertical
               className={styles.consultorioImage}
             />
           </div>

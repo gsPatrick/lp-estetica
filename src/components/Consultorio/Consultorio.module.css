@@ -22,14 +22,16 @@
 .imageWrapper {
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .consultorioImage {
-  width: 100%;
+  /* ALTERADO: Removido width: 100% e object-fit para manter proporções originais */
+  display: block;
+  max-width: 100%;
   height: auto;
-  object-fit: cover;
-  display: block; /* Remove espaço extra abaixo da imagem */
+  border-radius: 30px; /* ADICIONADO: Border radius aplicado diretamente na imagem */
 }
 
 .titleMain {

@@ -6,14 +6,6 @@ import styles from './Hero.module.css';
 
 const Hero = () => {
   // Configurações de animação para os elementos
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3, delayChildren: 0.5 },
-    },
-  };
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } },
@@ -24,7 +16,7 @@ const Hero = () => {
       <section className={styles.heroWrapper} id="home">
         <div className={styles.backgroundImage}>
           <Image
-            src="/images/hero.png" // Caminho para a imagem
+            src="/images/hero.png"
             alt="Dra. Giuliane Sodré"
             layout="fill"
             objectFit="cover"
@@ -34,25 +26,32 @@ const Hero = () => {
           <div className={styles.overlay}></div>
         </div>
 
-        <motion.div
-          className={styles.content}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h1 className={styles.title} variants={itemVariants}>
-            <span className={styles.titleScript}>I'm</span> here to help you
+        <div className={styles.content}>
+          <motion.h1 
+            className={styles.subtitle} 
+            variants={itemVariants} 
+            initial="hidden" 
+            animate="visible"
+          >
+            <span className={styles.titleScript}>Have</span> here to help you
           </motion.h1>
-          <motion.h2 className={styles.subtitle} variants={itemVariants}>
+
+          <motion.h2 
+            className={styles.subtitle} 
+            variants={itemVariants} 
+            initial="hidden" 
+            animate="visible"
+          >
             make the right choices
           </motion.h2>
 
-          <motion.div className={styles.buttonContainer} variants={itemVariants}>
+
+          <motion.div className={styles.buttonContainer} variants={itemVariants} initial="hidden" animate="visible">
             <button className={`${styles.button} ${styles.buttonOutline}`}>Saiba mais</button>
             <button className={`${styles.button} ${styles.buttonOutline}`}>Resultados</button>
             <button className={`${styles.button} ${styles.buttonFilled}`}>Agendar Consulta</button>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Banner de tratamentos que fica abaixo do Hero */}

@@ -7,7 +7,7 @@ const SobreMim = () => {
     <section id="sobre" className={styles.section}>
       <div className={styles.backgroundImage}>
         <Image
-          src="/images/sobremim.png"
+          src="/images/sobremim2.png"
           alt="Banner Sobre Mim - Dra. Giuliane Sodré"
           layout="fill" // MUITO IMPORTANTE: Garante que a imagem preencha o container pai
           objectFit="cover" // Garante que a imagem cubra a área sem distorcer

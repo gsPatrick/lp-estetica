@@ -9,11 +9,12 @@ const airelion = localFont({
   variable: '--font-airelion',
 });
 
-const sloopScriptPro = localFont({
-  src: '../fonts/sloop-script-pro-bold.otf',
-  display: 'swap',
-  variable: '--font-sloop-script-pro',
-});
+// Removida a configuração para SloopScriptPro aqui, pois será tratada globalmente
+// const sloopScriptPro = localFont({
+//   src: '../fonts/SloopScriptPro-Regular.woff2',
+//   display: 'swap',
+//   variable: '--font-sloop-script-pro',
+// });
 
 export const metadata = {
   title: 'Dra. Giuliane Sodré',
@@ -23,7 +24,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body className={`${airelion.variable} ${sloopScriptPro.variable}`}>
+      {/* A variável --font-script será usada globalmente */}
+      <body className={`${airelion.variable}`}>
         <Header />
         <main>{children}</main>
         <Footer /> {/* 2. Adicione o componente Footer aqui, depois do main */}

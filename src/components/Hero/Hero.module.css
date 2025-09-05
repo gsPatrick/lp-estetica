@@ -1,7 +1,6 @@
-
 .heroWrapper {
   position: relative;
-  height: 100vh;
+  height: 90vh; /* Ligeiramente maior para acomodar melhor o conteúdo */
   width: 100%;
   display: flex;
   align-items: center;
@@ -20,14 +19,13 @@
   z-index: 1;
 }
 
-/* Efeito de sobreposição para escurecer a imagem e melhorar a legibilidade */
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.1));
   z-index: 2;
 }
 
@@ -41,29 +39,28 @@
 }
 
 .title {
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 6vw, 4rem); /* Tamanho de fonte responsivo */
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 0;
+  /* Aplica a fonte script usando a variável CSS */
+  font-family: var(--font-script);
+  font-size: clamp(5rem, 10vw, 7rem);
+  font-weight: 400;
+  line-height: 0.8;
+  margin-bottom: -1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .titleScript {
+  /* Aplica a fonte script usando a variável CSS */
   font-family: var(--font-script);
-  font-size: clamp(4rem, 10vw, 7rem); /* Tamanho de fonte responsivo */
-  font-weight: 400;
-  line-height: 0.8;
 }
 
 .subtitle {
-  font-family: var(--font-sans);
-  font-size: clamp(2.5rem, 7vw, 5rem); /* Tamanho de fonte responsivo */
+  font-family: var(--font-primary); /* Fonte principal específica */
+  font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 400;
   line-height: 1.1;
-  margin-top: -1rem; /* Ajuste para aproximar do título */
+  color: var(--color-white);
 }
 
 .buttonContainer {
@@ -77,7 +74,7 @@
 .button {
   padding: 0.9rem 2.2rem;
   border-radius: 50px;
-  font-family: var(--font-sans);
+  font-family: 'Aileron', var(--font-primary);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -95,6 +92,8 @@
 .buttonOutline:hover {
   background-color: var(--color-white);
   color: var(--color-black);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .buttonFilled {
@@ -105,13 +104,14 @@
 .buttonFilled:hover {
   background-color: rgba(255, 255, 255, 0.85);
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Banner de tratamentos */
 .treatmentsBanner {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 2rem 5%;
+  padding: 1.2rem 5%; /* Padding otimizado */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -128,15 +128,41 @@
 }
 
 .treatmentMain {
-  font-family: var(--font-sans);
+  font-family: 'Aileron', var(--font-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.75rem; /* Tamanho ajustado */
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .treatmentScript {
+  /* Aplica a fonte script usando a variável CSS */
   font-family: var(--font-script);
-  font-size: 2rem;
+  font-size: 1.6rem; /* Tamanho ajustado */
   font-weight: 400;
+}
+
+.treatmentsBanner .treatmentItem:last-child .treatmentMain {
+  display: none;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .heroWrapper {
+    height: 80vh; /* Ajuste para mobile */
+  }
+
+  .title {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  .subtitle {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  .treatmentsBanner {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
 }

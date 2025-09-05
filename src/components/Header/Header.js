@@ -1,19 +1,17 @@
 'use client';
 
-import { useState } from 'react'; // Hook para controlar o estado do menu
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 // Ícones para o menu hambúrguer e social
-import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaBars, FaTimes } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaTiktok, FaYoutube, FaBars, FaTimes, FaEnvelope } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import styles from './Header.module.css';
 
 const Header = () => {
-  // Estado para controlar a visibilidade do menu mobile
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Função para alternar o estado do menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -26,11 +24,12 @@ const Header = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        <div className={styles.logo}>
+        <div className={styles.logoContainer}> {/* Renomeado para evitar conflito */}
           <Link href="/">
             <Image
-              src="/logo.png"
+              src="/images/logo2.png" // Certifique-se que esta imagem corresponde à do Canva
               alt="Dra. Giuliane Sodré Logo"
+              // Ajustar width e height conforme a imagem do Canva
               width={250}
               height={70}
               priority
@@ -38,8 +37,8 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Navegação para Desktop */}
         <nav className={styles.navigation}>
+          {/* Os links devem ser ajustados para usar a classe de link correta e a fonte primária */}
           <Link href="#home" className={styles.navLink}>HOME</Link>
           <Link href="#sobre" className={styles.navLink}>SOBRE</Link>
           <Link href="#tratamentos" className={styles.navLink}>TRATAMENTOS</Link>
@@ -47,17 +46,16 @@ const Header = () => {
           <Link href="#contato" className={styles.contactButton}>CONTATO</Link>
         </nav>
 
-        {/* Ícones Sociais para Desktop */}
         <div className={styles.socialIcons}>
+          {/* Ícones sociais conforme a imagem do Canva */}
           <a href="#" aria-label="Instagram"><FaInstagram /></a>
           <a href="#" aria-label="Facebook"><FaFacebookF /></a>
           <a href="#" aria-label="Twitter X"><FaXTwitter /></a>
           <a href="#" aria-label="TikTok"><FaTiktok /></a>
-          <a href="#" aria-label="Email">@</a>
+          <a href="#" aria-label="Email"><FaEnvelope /></a> {/* Assumindo que "@" é um ícone de email */}
           <a href="#" aria-label="Youtube"><FaYoutube /></a>
         </div>
 
-        {/* Botão Hambúrguer para Mobile */}
         <button className={styles.hamburgerButton} onClick={toggleMenu} aria-label="Abrir menu">
           <FaBars />
         </button>

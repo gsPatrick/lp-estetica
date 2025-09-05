@@ -9,13 +9,13 @@ const Valores = () => {
         {/* Coluna da Esquerda (Card de CTA) */}
         <div className={styles.leftColumn}>
           <div className={styles.ctaCard}>
-            <p className={styles.cardTitle}>TRATAMENTOS COM A NATURALIDADE DE VOCÊ MERECE</p>
+            <p className={styles.cardTitle}>TRATAMENTOS COM A NATURALIDADE QUE VOCÊ MERECE</p>
             <div className={styles.imageContainer}>
               <Image
                 src="/valores.png"
                 alt="Mulher agendando consulta pelo celular"
-                width={600}
-                height={400}
+                width={500}
+                height={300}
                 className={styles.cardImage}
               />
             </div>
@@ -24,14 +24,19 @@ const Valores = () => {
                 <h3>AGENDE AGORA</h3>
                 <h2>SUA CONSULTA</h2>
               </div>
-              <a href="https://wa.me/SEUNUMERO" target="_blank" rel="noopener noreferrer" className={styles.whatsappButton}>
+              <a 
+                href="https://wa.me/SEUNUMERO" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.whatsappButton}
+              >
                 WHATSAPP
               </a>
             </div>
           </div>
         </div>
 
-        {/* Coluna da Direita (Nossos Valores) */}
+        {/* Coluna da Esquerda (Card de CTA) */}
         <div className={styles.rightColumn}>
           <h1 className={styles.title}>
             <span className={styles.titleScript}>Nossos</span> valores
@@ -39,6 +44,7 @@ const Valores = () => {
           <p className={styles.introText}>
             Eles são a base de tudo o que fazemos e refletem nosso compromisso em oferecer uma experiência que vai além da estética: um cuidado que une técnica, arte e humanidade. São princípios que guiam cada decisão, cada atendimento e cada resultado que entregamos.
           </p>
+          
           <div className={styles.valuesList}>
             <div className={styles.valueItem}>
               <div className={styles.valueTag}>CONFIANÇA</div>
@@ -46,12 +52,14 @@ const Valores = () => {
                 Acreditamos que toda relação começa pelo acolhimento e pela segurança. Por isso, cultivamos uma atmosfera transparente, onde cada paciente sente-se segura para confiar sua beleza em nossas mãos.
               </p>
             </div>
+            
             <div className={styles.valueItem}>
               <div className={styles.valueTag}>EXCELÊNCIA</div>
               <p>
                 Nossa busca diária é pela perfeição nos detalhes. Da técnica ao atendimento, do primeiro contato ao resultado final, entregamos um padrão de qualidade elevado que combina ciência, arte e sofisticação.
               </p>
             </div>
+            
             <div className={styles.valueItem}>
               <div className={styles.valueTag}>INTEGRIDADE</div>
               <p>
