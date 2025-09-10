@@ -1,5 +1,6 @@
+/* Padding da seção */
 .section {
-  padding: 8rem 5%;
+  padding: 8rem 5%; 
   background-color: #fffff8; 
 }
 
@@ -7,8 +8,8 @@
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
-  align-items: flex-start;
-  gap: 6rem;
+  align-items: center; /* Alinhamento vertical centralizado entre as colunas */
+  gap: 5rem;
 }
 
 .leftColumn {
@@ -19,81 +20,91 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* Removido align-items: center para alinhar o conteúdo à esquerda */
 }
 
 /* --- Coluna da Esquerda: Card CTA --- */
 .ctaCard {
   border: 1px solid var(--color-black);
   border-radius: 45px;
-  padding: 2rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  overflow: hidden;
 }
 
 .cardTitle {
   font-family: var(--font-primary);
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   color: var(--color-black);
+  padding: 2.5rem 2.5rem 0 2.5rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 .imageContainer {
+  background-image: url('/valores.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  overflow: hidden;
-}
-
-.cardImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 300px;
 }
 
 .cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0;
+  padding: 0 2.5rem 2.5rem 2.5rem;
 }
 
 .footerText h3 {
   font-family: var(--font-primary);
   font-weight: 500;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .footerText h2 {
   font-family: var(--font-primary);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 1px;
   line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .whatsappButton {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 1rem 3rem;
+  padding: 1.3rem 4rem;
   border-radius: 50px;
   font-family: var(--font-primary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .whatsappButton:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Coluna da Direita: Valores --- */
+/* --- Coluna da Direita: Valores (ORDEM EXECUTADA: Compactação Máxima) --- */
 .title {
   font-family: var(--font-primary);
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: 4.2rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem; /* Reduzido ao mínimo */
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -101,24 +112,26 @@
 
 .titleScript {
   font-family: var(--font-script);
-  font-size: clamp(5rem, 9vw, 7rem);
+  font-size: 6.5rem;
   font-weight: 400;
   line-height: 0.8;
+  margin-top: -1rem;
 }
 
+/* ORDEM EXECUTADA: Texto menor para descer o título */
 .introText {
   font-family: var(--font-primary);
-  font-size: 0.85rem; /* ALTERADO: Fonte reduzida */
-  line-height: 1.6;
+  font-size: 0.75rem; /* Reduzido */
+  line-height: 1.4; /* Reduzido */
   color: var(--color-gray-dark);
-  margin-bottom: 2.5rem;
-  /* Removido text-align: center e max-width para alinhar à esquerda */
+  margin-bottom: 1.2rem; /* Reduzido */
+  max-width: none;
 }
 
 .valuesList {
   display: flex;
   flex-direction: column;
-  gap: 2rem; /* ALTERADO: Espaçamento entre os itens ajustado */
+  gap: 0.8rem; /* Reduzido ao mínimo */
   width: 100%; 
 }
 
@@ -129,25 +142,30 @@
 }
 
 .valueTag {
-  display: inline-block;
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 0.6rem 2.5rem; 
+  padding: 0.7rem 0;
   border-radius: 50px;
   font-family: var(--font-primary);
-  font-weight: 500;
-  font-size: 0.8rem; /* ALTERADO: Fonte da tag reduzida */
-  letter-spacing: 1.5px;
-  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   flex-shrink: 0;
+  min-width: 195px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .valueItem p {
   font-family: var(--font-primary);
-  font-size: 0.85rem; /* ALTERADO: Fonte do parágrafo reduzida */
-  line-height: 1.6;
+  font-size: 0.75rem; /* Reduzido para consistência */
+  line-height: 1.4; /* Reduzido para consistência */
   color: var(--color-gray-dark);
   text-align: left;
+  margin: 0;
 }
 
 
@@ -163,25 +181,42 @@
   }
   .rightColumn {
     text-align: center;
-    align-items: center; /* No mobile, voltamos a centralizar */
+    align-items: center;
   }
   .introText {
     text-align: center;
+    max-width: 100%;
   }
   .title {
     justify-content: center;
     flex-direction: column;
+    font-size: 3.5rem;
+  }
+  .titleScript {
+      font-size: 6rem;
+  }
+  .ctaCard {
+    padding: 0;
+  }
+  .cardTitle {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+  }
+  .cardFooter {
+    padding: 0 1.5rem 1.5rem 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .ctaCard {
-    padding: 1.5rem;
+  .cardTitle {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    text-align: center;
   }
   .cardFooter {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    text-align: center;
   }
   .whatsappButton {
     width: 100%;
@@ -190,7 +225,7 @@
   .valueItem {
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
     text-align: center;
   }
   .valueItem p {

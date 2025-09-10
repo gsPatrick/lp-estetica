@@ -1,196 +1,112 @@
+/*
+ * Arquivo: Header.module.css
+ * Descrição: Estilos com o botão de contato integrado à navegação.
+ */
+
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* Header mais fino/delicado como na segunda imagem */
-  padding: 0.6rem 5%; /* Reduzido ainda mais */
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
-  /* Mantendo a cor clara */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem 5%;
   background-color: #fffff8;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.logoContainer img {
-  /* Logo menor para header mais delicado */
-  max-height: 35px; /* Reduzido para ficar mais fino */
-  width: auto;
-}
-
-.navigation {
+.logoContainer {
   display: flex;
   align-items: center;
-  gap: 2.8rem;
+}
+
+.logoContainer img {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Navegação Principal */
+.navigation {
+  display: flex;
+  align-items: center; /* Garante alinhamento vertical perfeito dos links e do botão */
+  gap: 2.9rem; /* Espaçamento entre todos os itens da navegação, incluindo o botão */
 }
 
 .navLink {
-  font-family: 'Aileron', sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
-  color: var(--color-gray-dark);
-  transition: color 0.3s ease;
+  font-size: 0.6rem;
+  letter-spacing: 2.5px;
+  color: var(--color-black);
   text-transform: uppercase;
+  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .navLink:hover {
-  color: var(--color-black);
+  color: var(--color-gray-dark);
 }
 
+/* O estilo do botão é mantido, mas agora ele é um item flex dentro de .navigation */
 .contactButton {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 0.8rem 2rem; /* Ligeiramente menor para harmonizar com header fino */
+  padding: 0.5rem 2rem;
   border-radius: 50px;
-  font-family: 'Aileron', var(--font-primary);
+  font-family: var(--font-primary);
   font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
+  font-size: 0.7rem;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 .contactButton:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #333;
 }
 
+/* Ícones sociais - agora um item flex direto do .header */
 .socialIcons {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .socialIcons a {
-  color: var(--color-gray-dark);
-  font-size: 1.1rem;
+  color: var(--color-black);
+  font-size: 0.85rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcons a:hover {
-  color: var(--color-black);
-  transform: scale(1.1);
-}
-
-.hamburgerButton {
-  display: none;
-}
-
-.mobileMenu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F5F1EB;
-  z-index: 1001;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.mobileMenu.open {
-  transform: translateX(0);
-}
-
-.closeButton {
-  position: absolute;
-  top: 1.5rem;
-  right: 3%;
-  font-size: 2.2rem;
-  color: var(--color-black);
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.mobileNavLinks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  font-size: 1.5rem;
-  font-family: 'Aileron', var(--font-primary);
-  text-transform: uppercase;
-}
-
-.mobileNavLinks a {
-  transition: color 0.3s ease;
-}
-
-.mobileNavLinks a:hover {
-  color: var(--color-black);
-}
-
-.mobileContactButton {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  margin-top: 1.5rem;
-  font-family: 'Aileron', var(--font-primary);
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.mobileSocialIcons {
-  display: flex;
-  gap: 2.5rem;
-  font-size: 1.8rem;
-  margin-top: 4rem;
-}
-
-.mobileSocialIcons a {
   color: var(--color-gray-dark);
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.mobileSocialIcons a:hover {
-  color: var(--color-black);
   transform: scale(1.1);
 }
 
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+/* --- RESPONSIVIDADE --- */
+.hamburgerButton { display: none; font-size: 1.8rem; color: var(--color-black); background: none; border: none; cursor: pointer; z-index: 1002; }
+.mobileMenu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--color-beige-light); z-index: 1001; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
+.mobileMenu.open { transform: translateX(0); }
+.closeButton { position: absolute; top: 1.5rem; right: 5%; font-size: 2.2rem; color: var(--color-black); background: none; border: none; cursor: pointer; }
+.mobileNavLinks { display: flex; flex-direction: column; align-items: center; gap: 2.5rem; font-size: 1.5rem; font-family: 'Aileron', var(--font-primary); text-transform: uppercase; }
+.mobileNavLinks a { transition: color 0.3s ease; }
+.mobileNavLinks a:hover { color: var(--color-gray-dark); }
+.mobileContactButton { background-color: var(--color-black); color: var(--color-white); padding: 1rem 2.5rem; border-radius: 50px; margin-top: 1.5rem; font-family: 'Aileron', var(--font-primary); font-weight: 400; font-size: 0.9rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.mobileSocialIcons { display: flex; gap: 2.5rem; font-size: 1.8rem; margin-top: 4rem; }
+.mobileSocialIcons a { color: var(--color-gray-dark); transition: color 0.3s ease, transform 0.3s ease; }
+.mobileSocialIcons a:hover { color: var(--color-black); transform: scale(1.1); }
 
-@media (max-width: 1024px) {
-  .header {
-    padding: 0.4rem 3%; /* Mantendo header fino */
-  }
-  .navigation {
-    gap: 1.5rem;
-  }
-  .socialIcons {
-    display: none;
-  }
+@media (max-width: 1200px) {
+  .header { padding: 0.5rem 3%; }
+  .navigation { gap: 1.5rem; }
 }
 
-@media (max-width: 768px) {
-  .navigation {
-    display: none;
-  }
-  .socialIcons {
-    display: none;
-  }
-
-  .hamburgerButton {
-    display: block;
-    font-size: 1.8rem;
-    color: var(--color-black);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1002;
-  }
-
-  .logoContainer img {
-    max-height: 45px; /* Ajustado para mobile */
-  }
+/* Em telas menores, a .navigation inteira (incluindo o botão) e os .socialIcons somem */
+@media (max-width: 1024px) {
+  .navigation, .socialIcons { display: none; }
+  .hamburgerButton { display: block; }
+  .logoContainer img { max-height: 38px; }
 }

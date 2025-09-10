@@ -10,15 +10,11 @@ const Valores = () => {
         <div className={styles.leftColumn}>
           <div className={styles.ctaCard}>
             <p className={styles.cardTitle}>TRATAMENTOS COM A NATURALIDADE QUE VOCÊ MERECE</p>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/valores.png"
-                alt="Mulher agendando consulta pelo celular"
-                width={500}
-                height={300}
-                className={styles.cardImage}
-              />
-            </div>
+            
+            {/* --- ALTERAÇÃO EXECUTADA AQUI --- */}
+            {/* A imagem agora é um background da div abaixo, controlada pelo CSS */}
+            <div className={styles.imageContainer}></div>
+            
             <div className={styles.cardFooter}>
               <div className={styles.footerText}>
                 <h3>AGENDE AGORA</h3>
@@ -36,7 +32,7 @@ const Valores = () => {
           </div>
         </div>
 
-        {/* Coluna da Esquerda (Card de CTA) */}
+        {/* Coluna da Direita (Valores) */}
         <div className={styles.rightColumn}>
           <h1 className={styles.title}>
             <span className={styles.titleScript}>Nossos</span> valores

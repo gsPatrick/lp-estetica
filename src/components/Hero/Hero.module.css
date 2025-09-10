@@ -1,6 +1,15 @@
+/* Container principal que garante a altura total de 100vh */
+.heroContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-black);
+}
+
 .heroWrapper {
   position: relative;
-  height: 90vh; /* Ligeiramente maior para acomodar melhor o conteúdo */
+  flex-grow: 1;
+  min-height: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -25,8 +34,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.1));
   z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 30%);
 }
 
 .content {
@@ -38,27 +47,18 @@
   padding: 2rem;
 }
 
-.title {
-  /* Aplica a fonte script usando a variável CSS */
+.titleScript {
   font-family: var(--font-script);
-  font-size: clamp(5rem, 10vw, 7rem);
-  font-weight: 400;
+  font-size: clamp(6rem, 12vw, 8.5rem);
   line-height: 0.8;
   margin-bottom: -1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.titleScript {
-  /* Aplica a fonte script usando a variável CSS */
-  font-family: var(--font-script);
+  display: inline-block;
 }
 
 .subtitle {
-  font-family: var(--font-primary); /* Fonte principal específica */
+  font-family: var(--font-primary);
   font-size: clamp(2.5rem, 7vw, 5rem);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.1;
   color: var(--color-white);
 }
@@ -75,13 +75,13 @@
   padding: 0.9rem 2.2rem;
   border-radius: 50px;
   font-family: 'Aileron', var(--font-primary);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 400;
   cursor: pointer;
-  border: 2px solid var(--color-white);
+  border: 1px solid var(--color-white);
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
 }
 
 .buttonOutline {
@@ -93,30 +93,30 @@
   background-color: var(--color-white);
   color: var(--color-black);
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .buttonFilled {
   background-color: var(--color-white);
   color: var(--color-black);
+  border-color: var(--color-white);
 }
 
 .buttonFilled:hover {
   background-color: rgba(255, 255, 255, 0.85);
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Banner de tratamentos */
+/* --- Banner de tratamentos --- */
 .treatmentsBanner {
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 1.2rem 5%; /* Padding otimizado */
+  padding: 2rem; /* Aumentado para mais altura geral */
+  flex-shrink: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 5.5rem;
   text-align: center;
 }
 
@@ -124,45 +124,85 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
+/* ORDEM EXECUTADA: Fonte normal maior e mais grossa */
 .treatmentMain {
   font-family: 'Aileron', var(--font-primary);
-  font-weight: 600;
-  font-size: 0.75rem; /* Tamanho ajustado */
-  letter-spacing: 1.5px;
+  font-weight: 700; /* Mais grosso */
+  font-size: 1.2rem; /* Maior */
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+/* ORDEM EXECUTADA: Fonte de destaque ainda maior */
+.treatmentMainLarge {
+  font-size: 1.4rem; /* Maior para manter a hierarquia */
+  font-weight: 700;
+}
+
 .treatmentScript {
-  /* Aplica a fonte script usando a variável CSS */
   font-family: var(--font-script);
-  font-size: 1.6rem; /* Tamanho ajustado */
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  margin-bottom: -2px;
 }
 
-.treatmentsBanner .treatmentItem:last-child .treatmentMain {
-  display: none;
+.alignRight {
+  width: 100%;
+  text-align: right;
 }
 
-/* Media queries para responsividade */
-@media (max-width: 768px) {
-  .heroWrapper {
-    height: 80vh; /* Ajuste para mobile */
-  }
+.mentoriaScript {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
 
-  .title {
-    font-size: clamp(3rem, 8vw, 5rem);
-  }
+.alignLeft {
+  align-items: flex-start;
+}
 
-  .subtitle {
-    font-size: clamp(2rem, 6vw, 4rem);
-  }
+.smallScript {
+  font-family: var(--font-script);
+  font-size: 1rem;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  margin-bottom: 0px;
+}
 
+
+/* Media queries */
+@media (max-width: 900px) {
   .treatmentsBanner {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 5%;
+    gap: 2.5rem;
+    justify-content: space-around;
   }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    height: auto;
+  }
+  .heroWrapper {
+    height: 80vh;
+    flex-grow: 0;
+  }
+}
+
+@media (max-width: 600px) {
+    .treatmentsBanner {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
 }
